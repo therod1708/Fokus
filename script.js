@@ -11,10 +11,10 @@ const iniciarOuPausarBt = document.querySelector("#start-pause span");
 const icon = document.querySelector("#imagem-icon");
 const tempoNaTela = document.querySelector("#timer");
 
-const musica = new Audio("./sons/luna-rise-part-one.mp3");
-const toquePlay = new Audio("sons/play.wav");
-const toquePause = new Audio("./sons/pause.mp3");
-const toqueBeep = new Audio("./sons/beep.mp3");
+const musica = new Audio("/../sons/luna-rise-part-one.mp3");
+const toquePlay = new Audio("/../sons/play.wav");
+const toquePause = new Audio("/../sons/pause.mp3");
+const toqueBeep = new Audio("/../sons/beep.mp3");
 musica.loop = true //musica ficando tocando o tempo inteiro
 toqueBeep == true;
 
@@ -57,7 +57,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove("active");
     })
     html.setAttribute("data-contexto", contexto);
-    banner.setAttribute("src", `../imagens/${contexto}.png`); 
+    banner.setAttribute("src", `/../imagens/${contexto}.png`); 
     switch (contexto) {
         case "foco":
             titulo.innerHTML = 
@@ -104,7 +104,7 @@ function iniciarOuPausar() { //inicia e pausa o temporizador
     toquePlay.play();
     intervaloId = setInterval(contagemRegressiva, 1000); //setInterval(qual método, em quanto tempo para ser executado)
     iniciarOuPausarBt.textContent = "Pausar";
-    icon.setAttribute("src", "./imagens/pause.png");
+    icon.setAttribute("src", "/../imagens/pause.png");
 }
 
 
@@ -113,7 +113,7 @@ function iniciarOuPausar() { //inicia e pausa o temporizador
 function zerar() {
     clearInterval(intervaloId); //vai interromper a execução de um código
     iniciarOuPausarBt.textContent = "Começar";
-    icon.setAttribute("src", "./imagens/play_arrow.png");
+    icon.setAttribute("src", "/../imagens/play_arrow.png");
     intervaloId = null; 
 }
 
